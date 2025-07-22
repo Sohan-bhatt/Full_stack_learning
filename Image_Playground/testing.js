@@ -5,14 +5,14 @@ function changeShapeRandomly(elem) {
   const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
   elem.style.borderRadius = randomShape;
 }
-// 1. Select all images in the container
+
 
 function border11(elem){
     const l="0123456789ABCDEF";
     let color="#";
     for(let i=0;i<6;i++)color+=l[Math.floor(Math.random()*16)];
     elem.style.borderColor=color;
-     elem.style.borderWidth = "2px";      // You can change this to any value like "5px"
+     elem.style.borderWidth = "2px";      
   elem.style.borderStyle = "dashed";
 }
 let activeimg=null;
@@ -20,12 +20,12 @@ function add(){
     document.querySelectorAll(".images img").forEach((img) => {
         let count=0;
         img.addEventListener('click', (event) => {
-            event.stopPropagation(); // Optional: stops bubbling up if needed
+            event.stopPropagation();
             if(activeimg && activeimg!==img){
                 activeimg.classList.remove("click-effect");
             
             }
-            img.classList.add("click-effect"); //->add effect to new
+            img.classList.add("click-effect"); 
             activeimg=img;
          }); 
         img.addEventListener('dblclick', (e) => {
